@@ -8,6 +8,7 @@ namespace DTO
 
         public string Name { get; set; }
 
+        override
         public string ToString()
         {
             return Id + " " + Name;

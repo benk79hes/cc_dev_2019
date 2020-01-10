@@ -6,18 +6,18 @@ using DTO;
 
 namespace BLL
 {
-    public class Class1Manager
+    public class Class1Manager : IClass1Manager
     {
-        public Class1DB Class1DB { get; }
+        private IClass1DB class1DB { get; }
 
-        public Class1Manager(IConfiguration configuration)
+        public Class1Manager(IClass1DB class1DB)
         {
-            Class1DB = new Class1DB(configuration);
+            this.class1DB = class1DB;
         }
 
         public List<Class1> GetAllClass1()
         {
-            return Class1DB.GetAllClass1();
+            return class1DB.GetAllClass1();
         }
 
     }

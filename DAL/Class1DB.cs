@@ -6,19 +6,20 @@ using DTO;
 
 namespace DAL
 {
-    public class Class1DB
+    public class Class1DB : IClass1DB
     {
-        IConfiguration Configuration;
+        private IConfiguration configuration;
+
         public Class1DB(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.configuration = configuration;
         }
 
 
         public List<Class1> GetAllClass1()
         {
             List<Class1> results = null;
-            string connectionString = Configuration.GetConnectionString("default");
+            string connectionString = configuration.GetConnectionString("default");
 
             try
             {
